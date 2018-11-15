@@ -10,6 +10,7 @@ download = true
 
 task build
 
+<<<<<<< HEAD
 task zip(type:Zip) {
 from ('.') {
         include "*"
@@ -19,6 +20,18 @@ from ('.') {
         include "public/**"
         include "routes/**"
         include "views/**"
+=======
+
+task zip(type:Zip) {
+from ('.') {
+	include "*"
+	include "bin/**"
+	include "data/**"
+	include "node_modules/**"
+	include "public/**"
+	include "routes/**"
+	include "views/**"
+>>>>>>> f414100be21882d8c0b2645047a80a4e85d638e3
   }
   destinationDir(file("dist"))
   baseName "trainSchedule"
@@ -26,9 +39,20 @@ from ('.') {
 
 build.dependsOn zip
 zip.dependsOn npm_build
+<<<<<<< HEAD
 
 build.dependsOn npm_build
 
 npm_build.dependsOn npmInstall
 npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
+=======
+	
+build.dependsOn npm_build
+
+npm_build.dependsOn npmInstall
+
+npm_build.dependsOn npm_test
+npm_test.dependsOn npmInstall
+
+>>>>>>> f414100be21882d8c0b2645047a80a4e85d638e3
